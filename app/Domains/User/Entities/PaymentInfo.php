@@ -14,7 +14,7 @@ class PaymentInfo implements \JsonSerializable
      * @var
      */
     private $id;
-    
+
     /**
      * @var
      */
