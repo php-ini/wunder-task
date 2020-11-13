@@ -33,8 +33,10 @@ class RepositoryService
         }
     }
 
-    public function getEntity()
+    public function updateUserSteps($userId, $step)
     {
-
+        $userRepo = new User();
+        return $userRepo->update($userId, ['completed_step', $step]);
     }
+
 }

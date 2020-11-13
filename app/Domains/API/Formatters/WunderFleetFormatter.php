@@ -1,0 +1,30 @@
+<?php
+
+
+namespace App\Domains\API\Formatters;
+use App\Domains\User\Repositories\User;
+use GuzzleHttp\Psr7\Response;
+
+class WunderFleetFormatter implements FormatterInterface
+{
+
+    public function format(array $data): array
+    {
+        $new['customerId'] = $data['user_id'];
+        $new['iban'] = $data['iban'];
+        $new['owner'] = $data['account_owner_name'];
+
+        return $new;
+    }
+
+    public function prepareOutput(Response $response, array $data): array
+    {
+        $all = $data;
+        $responseArray = json_decode($response->getBody()->getContents(), true);
+        $all['payment_data'] = $responseArray['paymentDataId'];
+        $all['status'] = $response->getStatusCode();
+        $all['response'] = json_encode($responseArray);
+
+        return $all;
+    }
+}

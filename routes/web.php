@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('/register', [Register::class, 'index']);
 
 Route::post('/register', [Register::class, 'register']);
+Route::post('/test-url', [Register::class, 'testUrl']);

@@ -48,6 +48,9 @@
             <div id="step-4" class="tab-pane" role="tabpanel" aria-labelledby="step-4">
                 <h3>Success</h3>
                 Thank you for the registration..
+                <br>
+                <br>
+                Your Payment ID: <span id="paymentCode" style="font-weight: bold"></span>
             </div>
         </div>
     </div>

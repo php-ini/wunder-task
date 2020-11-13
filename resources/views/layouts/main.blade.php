@@ -111,9 +111,14 @@
             $.post("/register?form=" + formName,
                 data,
                 function(data, status){
-                    alert("Data: " + data + "\nStatus: " + status);
+                if(formName == 'Payment'){
+                    $('#paymentCode').html(data.paymentCode);
+                }
                     moveNext();
-                });
+                })
+                .fail(function(response) {
+                alert('Error: ' + response.responseText);
+            });
         }
 
 

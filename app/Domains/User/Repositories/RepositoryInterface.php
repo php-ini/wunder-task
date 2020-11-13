@@ -12,7 +12,7 @@ namespace App\Domains\User\Repositories;
 interface RepositoryInterface
 {
 
-    public function getById(int $id) : array;
+    public function find(int $id) : array;
 
     public function create(array $data) : int;
 

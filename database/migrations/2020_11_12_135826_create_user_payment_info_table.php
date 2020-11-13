@@ -23,7 +23,7 @@ class CreateUserPaymentInfoTable extends Migration
                 ->nullable();
             $table->tinyInteger('is_primary')
                 ->default(0);
-            $table->integer('status');
+            $table->integer('status')->nullable();
             $table->text('response')
                 ->nullable();
             $table->timestamps();

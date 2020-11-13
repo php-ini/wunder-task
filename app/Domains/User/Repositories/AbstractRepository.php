@@ -7,7 +7,7 @@ use DB;
 
 abstract class AbstractRepository
 {
-    public function getById(int $id): array
+    public function find(int $id): array
     {
         return DB::table($this->table_name)->find($id);
     }
