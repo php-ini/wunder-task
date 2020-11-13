@@ -3,17 +3,29 @@
 
 namespace App\Domains\User\Validators;
 
+use Illuminate\Support\Facades\Validator;
 
-class UserValidator implements \ValidatorInterface
+class UserValidator implements ValidatorInterface
 {
+    private $messages = [];
 
     public function validate(array $data): bool
     {
-        // TODO: Implement validate() method.
+        $validator = Validator::make($data, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required|email'
+        ]);
+
+        if ($validator->fails()) {
+            return false;
+        }
+
+        return true;
     }
 
     public function getMessages(): array
     {
-        // TODO: Implement getMessages() method.
+        return $this->messages;
     }
 }

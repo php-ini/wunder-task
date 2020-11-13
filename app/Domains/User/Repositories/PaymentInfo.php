@@ -8,24 +8,16 @@ namespace App\Domains\User\Repositories;
  * Class PaymentInfo
  * @package App\Domains\User\Repositories
  */
-class PaymentInfo implements PaymentInfoInterface
+class PaymentInfo extends AbstractRepository implements RepositoryInterface
 {
+    protected $table_name = 'user_payment_info';
 
-    /**
-     * @param int $user_id
-     * @return array
-     */
-    public function getById(int $user_id): array
+    public function hasRecord($data): bool
     {
-        // TODO: Implement getById() method.
+        return $this->exists('user_id', $data['user_id']);
     }
-
-    /**
-     * @param int $user_id
-     * @return array
-     */
-    public function getByUserId(int $user_id): array
+    public function getRecord($data): array
     {
-        // TODO: Implement getByUserId() method.
+        return $this->where('user_id', $data['user_id']);
     }
 }

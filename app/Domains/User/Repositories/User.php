@@ -2,30 +2,22 @@
 
 
 namespace App\Domains\User\Repositories;
-
+use DB;
 
 /**
  * Class User
  * @package App\Domains\User\Repositories
  */
-class User implements UserInterface
+class User extends AbstractRepository implements RepositoryInterface
 {
+    protected $table_name = 'user';
 
-    /**
-     * @param int $user_id
-     * @return array
-     */
-    public function getById(int $user_id): array
+    public function hasRecord($data): bool
     {
-        // TODO: Implement getById() method.
+        return $this->exists('email', $data['email']);
     }
-
-    /**
-     * @param string $token
-     * @return array
-     */
-    public function getByUserToken(string $token): array
+    public function getRecord($data): array
     {
-        // TODO: Implement getByUserToken() method.
+        return $this->where('email', $data['email']);
     }
 }

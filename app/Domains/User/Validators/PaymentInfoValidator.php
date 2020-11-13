@@ -4,7 +4,7 @@
 namespace App\Domains\User\Validators;
 
 
-class PaymentInfoValidator
+class PaymentInfoValidator implements ValidatorInterface
 {
     public function validate(array $data): bool
     {

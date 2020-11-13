@@ -5,7 +5,7 @@ namespace App\Domains\User\Entities;
 
 
 /**
- * Class Address
+ * Class Repository
  * @package App\Domains\User\Entities
  */
 class Address implements \JsonSerializable
@@ -56,7 +56,7 @@ class Address implements \JsonSerializable
     private $created_at;
 
     /**
-     * Address constructor.
+     * Repository constructor.
      * @param int $id
      * @param int $user_id
      * @param string $street

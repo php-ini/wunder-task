@@ -1,4 +1,5 @@
 <?php
+namespace App\Domains\User\Validators;
 
 interface ValidatorInterface {
 

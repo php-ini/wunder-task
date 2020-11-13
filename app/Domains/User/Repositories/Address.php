@@ -5,27 +5,19 @@ namespace App\Domains\User\Repositories;
 
 
 /**
- * Class Address
+ * Class Repository
  * @package App\Domains\User\Repositories
  */
-class Address implements AddressInterface
+class Address extends AbstractRepository implements RepositoryInterface
 {
+    protected $table_name = 'user_address';
 
-    /**
-     * @param int $id
-     * @return array
-     */
-    public function getById(int $id): array
+    public function hasRecord($data): bool
     {
-        // TODO: Implement getById() method.
+        return $this->exists('user_id', $data['user_id']);
     }
-
-    /**
-     * @param int $user_id
-     * @return array
-     */
-    public function getByUserId(int $user_id): array
+    public function getRecord($data): array
     {
-        // TODO: Implement getByUserId() method.
+        return $this->where('user_id', $data['user_id']);
     }
 }

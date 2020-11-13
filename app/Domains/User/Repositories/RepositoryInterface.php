@@ -9,11 +9,13 @@
 namespace App\Domains\User\Repositories;
 
 
-interface AddressInterface
+interface RepositoryInterface
 {
 
     public function getById(int $id) : array;
 
-    public function getByUserId(int $user_id) : array;
+    public function create(array $data) : int;
+
+    public function update(int $id, array $data) : bool;
 
 }

@@ -4,16 +4,32 @@
 namespace App\Domains\User\Validators;
 
 
-class AddressValidator implements \ValidatorInterface
+use Illuminate\Support\Facades\Validator;
+
+class AddressValidator implements ValidatorInterface
 {
+
+    private $messages = [];
 
     public function validate(array $data): bool
     {
-        // TODO: Implement validate() method.
+        $validator = Validator::make($data, [
+            'street' => 'required',
+            'house_number' => 'required',
+            'zip_code' => 'required',
+            'city' => 'required',
+            'country' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return false;
+        }
+
+        return true;
     }
 
     public function getMessages(): array
     {
-        // TODO: Implement getMessages() method.
+        return $this->messages;
     }
 }

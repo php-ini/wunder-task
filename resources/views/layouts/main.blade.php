@@ -82,6 +82,41 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
+        $('#user-form, #address-form, #payment-form').submit(function (e) {
+            e.preventDefault();
+            postData($(this));
+        });
+
+        function getFormData($form){
+            var unindexed_array = $form.serializeArray();
+            var indexed_array = {};
+
+            $.map(unindexed_array, function(n, i){
+                indexed_array[n['name']] = n['value'];
+            });
+
+            indexed_array._token = '{{csrf_token()}}';
+
+            return indexed_array;
+        }
+
+        function moveNext(){
+            $('#smartwizard').smartWizard("next");
+        }
+
+        function postData(that){
+            let formName = that.data('model');
+            let data = getFormData(that);
+            console.log(data);
+            $.post("/register?form=" + formName,
+                data,
+                function(data, status){
+                    alert("Data: " + data + "\nStatus: " + status);
+                    moveNext();
+                });
+        }
+
+
         // Toolbar extra buttons
         var btnFinish = $('<button></button>').text('Finish')
             .addClass('btn btn-info')

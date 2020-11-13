@@ -14,10 +14,10 @@ use App\Http\Controllers\Register;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/register', [Register::class, 'index']);
+
+Route::post('/register', [Register::class, 'register']);
