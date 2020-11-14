@@ -14,6 +14,13 @@
 
 <b>Which things could be done better?</b>
 <p>- Decouple the registration steps to have one handler for everystep, in this way I can have more flexibility and can control the changes might be required in the future.</p>
+<p>- Select the payment provider (site) with the dependency injection, now it is hard-coded in a constant</p>
+<b>Installation:</b>
+<p>- Install locally the virtual host for your domain (mine was wunder.test).</p>
+<p>- Clone the repository to your local (git clone ..).</p>
+<p>- Run composer install in the project directory.</p>
+<p>- Copy .env.example -> .env and set the database connection and the virtual host domain.</p>
+<p>- Import the DB schema / or run the migration (php artisan migrate).</p>
 <b>Notes:</b>
 <p>The provided endpoint for payment is returning 502 Bad Gateway, so I created another endpoint locally for the purpose of simulation the request/response.</p>
 <p>The simulation endpoint can be disabled by switching the constant in <code>Domains/WunderFleet/Payment/Sites/WunderFleet.php</code></p>
