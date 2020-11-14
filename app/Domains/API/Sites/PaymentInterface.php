@@ -8,7 +8,7 @@ namespace App\Domains\API\Sites;
  * @package App\Domains\API\Sites
  * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
-interface CrawlerInterface{
+interface PaymentInterface{
 
     /**
      * @return string
