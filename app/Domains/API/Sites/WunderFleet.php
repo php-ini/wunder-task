@@ -38,8 +38,6 @@ class WunderFleet implements CrawlerInterface
      */
     public function sendRequest(array $data): Response
     {
-        $data = ["customerId" => 10567, "iban" => "DE8234765765756775", "owner" => "Max Mustermann"];
-
         try {
             $client = new Client();
             $result = $client->request('POST', $this->getUrl(), [
