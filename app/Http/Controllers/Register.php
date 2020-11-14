@@ -43,6 +43,10 @@ class Register extends Controller
             $formName = $data['form'];
             $repositoryService = new RepositoryService($formName);
             $validatorFactory = new ValidatorFactory($formName);
+
+            /**
+             * Receive the step input and process it - can be decoupled for each step
+             */
             $registerService = new RegisterService(
                 $validatorFactory->getValidator(),
                 $repositoryService->getRepository(),
@@ -51,13 +55,18 @@ class Register extends Controller
             );
             $paymentService = new PaymentService();
 
+            /**
+             * Response logic for the user step
+             */
             if (($recordId = $registerService->startProcess()) && $formName == 'User') {
-
                 $response = response()->json(['status' => 'success', 'errors' => $registerService->getValidator()->getMessages()]);
                 $response->cookie($registerService->setCookie($recordId));
                 return $response;
             }
 
+            /**
+             * Response logic for the payment step
+             */
             if (!empty($registerService->getPaymentClass())) {
 
                 return new JsonResponse(['status' => 'success', 'paymentCode' => $paymentService->getPaymentCode((int)$registerService->getUserIdFromCookie())], 200);
@@ -68,6 +77,7 @@ class Register extends Controller
     }
 
     /**
+     * Simulation to the 3rd-party endpoint
      * @param Request $request
      * @return JsonResponse
      */
