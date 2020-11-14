@@ -8,7 +8,7 @@
                         <i class="fa fa-address-card"></i>
                     </div>
                 </div>
-                <input id="street" name="street" placeholder="Street" type="text" aria-describedby="streetHelpBlock" required="required" class="form-control">
+                <input id="street" value="{{ isset($data->address) ? $data->address->getStreet() : '' }}" name="street" placeholder="Street" type="text" aria-describedby="streetHelpBlock" required="required" class="form-control">
             </div>
             <span id="streetHelpBlock" class="form-text text-muted">Hauptbanhauf str.</span>
         </div>
@@ -22,7 +22,7 @@
                         <i class="fa fa-address-card"></i>
                     </div>
                 </div>
-                <input id="house_number" name="house_number" placeholder="House number" type="text" class="form-control" aria-describedby="house_numberHelpBlock" required="required">
+                <input id="house_number" value="{{ isset($data->address) ? $data->address->getHouseNumber() : '' }}" name="house_number" placeholder="House number" type="text" class="form-control" aria-describedby="house_numberHelpBlock" required="required">
             </div>
             <span id="house_numberHelpBlock" class="form-text text-muted">23</span>
         </div>
@@ -36,7 +36,7 @@
                         <i class="fa fa-address-card"></i>
                     </div>
                 </div>
-                <input id="zip_code" name="zip_code" placeholder="Zip code" type="text" class="form-control" aria-describedby="zip_codeHelpBlock" required="required">
+                <input id="zip_code" value="{{ isset($data->address) ? $data->address->getZipCode() : '' }}" name="zip_code" placeholder="Zip code" type="text" class="form-control" aria-describedby="zip_codeHelpBlock" required="required">
             </div>
             <span id="zip_codeHelpBlock" class="form-text text-muted">48143</span>
         </div>
@@ -50,7 +50,7 @@
                         <i class="fa fa-address-card"></i>
                     </div>
                 </div>
-                <input id="city" name="city" placeholder="City" type="text" class="form-control" aria-describedby="cityHelpBlock" required="required">
+                <input id="city" value="{{ isset($data->address) ? $data->address->getCity() : '' }}" name="city" placeholder="City" type="text" class="form-control" aria-describedby="cityHelpBlock" required="required">
             </div>
             <span id="cityHelpBlock" class="form-text text-muted">Hamburg</span>
         </div>
@@ -60,8 +60,7 @@
         <div class="col-8">
             <select id="country" name="country" class="custom-select">
                 <option value="DE">Germany</option>
-                <option value="EG">Egypt</option>
-                <option value="CY">Cyprus</option>
+
             </select>
         </div>
     </div>

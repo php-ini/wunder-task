@@ -9,10 +9,11 @@ use Faker\Provider\Payment;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use ViewModels\Step;
+use App\Domains\User\ViewModels\Step;
 use App\Domains\User\Services\RegisterService;
 use App\Domains\User\Services\ValidatorService;
 use Cookie;
+use Illuminate\View\View;
 
 class Register extends Controller
 {
@@ -22,18 +23,15 @@ class Register extends Controller
      */
     public function index(Request $request)
     {
-//        if($name = Cookie::get(RegisterService::COOKIE_NAME)){
-//            dd($name);
-//        }
-        $paymentService = new PaymentService();
-//        dd($paymentService->getPaymentSiteClass());
-//        $w = new WunderFleet([]);
-//        try {
-//            dd($w->sendRequest());
-//        } catch (\Exception $e) {
-//            dd($e->getMessage());
-//        }
-        return view('index', []);
+        if ($userId = Cookie::get(RegisterService::COOKIE_NAME)) {
+            $step = new Step($userId);
+
+            if ($step->hasData()) {
+                return view('index', ['data' => $step->build()]);
+            }
+        }
+
+        return view('index', ['data' => []]);
     }
 
     /**
@@ -63,13 +61,12 @@ class Register extends Controller
                 return $response;
             }
 
-            if(!empty($registerService->getPaymentClass())){
+            if (!empty($registerService->getPaymentClass())) {
 
                 return new JsonResponse(['status' => 'success', 'paymentCode' => $paymentService->getPaymentCode($registerService->getUserIdFromCookie())], 200);
             }
 
             return new JsonResponse(['status' => 'success', 'errors' => $registerService->getValidator()->getMessages()], 200);
-
         }
     }
 
@@ -77,7 +74,8 @@ class Register extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function testUrl(Request $request){
+    public function testUrl(Request $request)
+    {
         return new JsonResponse(["paymentDataId" => "c68644153714ca78e4102c7f54747a5a3c1c06be332bd4c2b26e7b2a41ed228d86975c9997b96b8bb0da030d34a2be95"], 200);
     }
 }

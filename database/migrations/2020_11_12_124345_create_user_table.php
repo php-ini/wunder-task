@@ -23,7 +23,7 @@ class CreateUserTable extends Migration
             $table->string('email', 100)
                 ->unique();
             $table->tinyInteger('is_active')
-                ->default(0)
+                ->default(1)
                 ->index();
             $table->string('token', 50)
                 ->nullable();

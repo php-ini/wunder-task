@@ -193,6 +193,7 @@ class RegisterService
     public function startProcess(): int
     {
         $result = 0;
+        $repositoryService = new RepositoryService($this->formName);
         if ($this->isDataValid()) {
             if ($this->isDataCreatedAlready()) {
                 $result = $this->updateData();
@@ -207,9 +208,13 @@ class RegisterService
                             )
                         );
                         $result = $this->createData();
-                    } else{
-                        $result = $this->createData();
+                        $userId = !empty($this->getUserIdFromCookie()) ? $this->getUserIdFromCookie() : $result;
+                        $repositoryService->updateUserSteps($userId);
                     }
+                } else {
+                    $result = $this->createData();
+                    $userId = !empty($this->getUserIdFromCookie()) ? $this->getUserIdFromCookie() : $result;
+                    $repositoryService->updateUserSteps($userId);
                 }
             }
         }

@@ -18,6 +18,11 @@ class PaymentInfo implements \JsonSerializable
     /**
      * @var
      */
+    private $user_id;
+
+    /**
+     * @var
+     */
     private $account_owner_name;
 
     /**
@@ -29,6 +34,8 @@ class PaymentInfo implements \JsonSerializable
      * @var
      */
     private $status;
+
+    private $payment_data;
 
     /**
      * @var
@@ -48,6 +55,7 @@ class PaymentInfo implements \JsonSerializable
     /**
      * PaymentInfo constructor.
      * @param $id
+     * @param $user_id
      * @param $account_owner_name
      * @param $iban
      * @param $status
@@ -55,11 +63,13 @@ class PaymentInfo implements \JsonSerializable
      * @param $response
      * @param $created_at
      */
-    public function __construct($id, $account_owner_name, $iban, $status, $is_primary, $response, $created_at)
+    public function __construct($id, $user_id, $account_owner_name, $iban, $payment_data, $status, $is_primary, $response, $created_at)
     {
         $this->id = $id;
+        $this->user_id = $user_id;
         $this->account_owner_name = $account_owner_name;
         $this->iban = $iban;
+        $this->payment_data = $payment_data;
         $this->status = $status;
         $this->is_primary = $is_primary;
         $this->response = $response;
@@ -176,6 +186,22 @@ class PaymentInfo implements \JsonSerializable
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPaymentData()
+    {
+        return $this->payment_data;
     }
 
     /**

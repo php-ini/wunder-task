@@ -48,11 +48,6 @@ class User implements \JsonSerializable
     /**
      * @var string|string
      */
-    private $token;
-
-    /**
-     * @var string|string
-     */
     private $created_at;
 
     /**
@@ -64,28 +59,26 @@ class User implements \JsonSerializable
      * @param string $telephone
      * @param int $completed_step
      * @param bool $is_active
-     * @param string $token
      * @param string $created_at
      */
     public function __construct(
-        id $id,
+        int $id,
         string $email,
         string $first_name,
         string $last_name,
         string $telephone,
         int $completed_step,
         bool $is_active,
-        string $token,
         string $created_at
     )
     {
+        $this->id = $id;
         $this->email = $email;
         $this->first_name = $first_name;
         $this->last_name = $last_name;
         $this->telephone = $telephone;
         $this->completed_step = $completed_step;
         $this->is_active = $is_active;
-        $this->token = $token;
         $this->created_at = $created_at;
     }
 

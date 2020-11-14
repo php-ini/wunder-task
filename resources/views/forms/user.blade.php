@@ -8,7 +8,7 @@
                         <i class="fa fa-address-card"></i>
                     </div>
                 </div>
-                <input id="first_name" name="first_name" placeholder="First name" type="text" aria-describedby="first_nameHelpBlock" required="required" class="form-control">
+                <input id="first_name" value="{{ isset($data->user) ? $data->user->getFirstName() : '' }}" name="first_name" placeholder="First name" type="text" aria-describedby="first_nameHelpBlock" required="required" class="form-control">
             </div>
             <span id="first_nameHelpBlock" class="form-text text-muted">Mahmoud</span>
         </div>
@@ -22,7 +22,7 @@
                         <i class="fa fa-address-card"></i>
                     </div>
                 </div>
-                <input id="last_name" name="last_name" placeholder="Last name" type="text" aria-describedby="last_nameHelpBlock" required="required" class="form-control">
+                <input id="last_name" value="{{ isset($data->user) ? $data->user->getLastName() : '' }}" name="last_name" placeholder="Last name" type="text" aria-describedby="last_nameHelpBlock" required="required" class="form-control">
             </div>
             <span id="last_nameHelpBlock" class="form-text text-muted">Mostafa</span>
         </div>
@@ -36,7 +36,7 @@
                         <i class="fa fa-vcard-o"></i>
                     </div>
                 </div>
-                <input id="email" name="email" placeholder="Email" type="text" aria-describedby="emailHelpBlock" required="required" class="form-control">
+                <input id="email" value="{{ isset($data->user) ? $data->user->getEmail() : '' }}" name="email" placeholder="Email" type="text" aria-describedby="emailHelpBlock" required="required" class="form-control">
             </div>
             <span id="emailHelpBlock" class="form-text text-muted">email@domain.com</span>
         </div>
@@ -50,7 +50,7 @@
                         <i class="fa fa-phone"></i>
                     </div>
                 </div>
-                <input id="telephone" name="telephone" placeholder="Telephone" type="text" aria-describedby="telephoneHelpBlock" required="required" class="form-control">
+                <input id="telephone" value="{{ isset($data->user) ? $data->user->getTelephone() : '' }}" name="telephone" placeholder="Telephone" type="text" aria-describedby="telephoneHelpBlock" required="required" class="form-control">
             </div>
             <span id="telephoneHelpBlock" class="form-text text-muted">015167186688</span>
         </div>

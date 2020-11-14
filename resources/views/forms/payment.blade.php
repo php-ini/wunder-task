@@ -8,7 +8,7 @@
                         <i class="fa fa-address-card"></i>
                     </div>
                 </div>
-                <input id="account_owner_name" name="account_owner_name" placeholder="Account owner name" type="text" aria-describedby="account_owner_nameHelpBlock" required="required" class="form-control">
+                <input id="account_owner_name" value="{{ isset($data->payment) ? $data->payment->getAccountOwnerName() : '' }}" name="account_owner_name" placeholder="Account owner name" type="text" aria-describedby="account_owner_nameHelpBlock" required="required" class="form-control">
             </div>
             <span id="account_owner_nameHelpBlock" class="form-text text-muted">Mahmoud Abdelsattar</span>
         </div>
@@ -22,7 +22,7 @@
                         <i class="fa fa-address-card"></i>
                     </div>
                 </div>
-                <input id="iban" name="iban" placeholder="IBAN" type="text" class="form-control" required="required" aria-describedby="ibanHelpBlock">
+                <input id="iban" value="{{ isset($data->payment) ? $data->payment->getIban() : ''  }}" name="iban" placeholder="IBAN" type="text" class="form-control" required="required" aria-describedby="ibanHelpBlock">
             </div>
             <span id="ibanHelpBlock" class="form-text text-muted">DE22-xxxx-xxxx-xxxx-xxxx-xx</span>
         </div>

@@ -13,6 +13,8 @@ class RepositoryService
 {
 
     private $formName;
+
+    const STEP_MAPPING = ['User' => 1, 'Address' => 2, 'Payment' => 3];
     /**
      * RepositoryService constructor.
      */
@@ -33,10 +35,14 @@ class RepositoryService
         }
     }
 
-    public function updateUserSteps($userId, $step)
+    public function updateUserSteps($userId)
     {
         $userRepo = new User();
-        return $userRepo->update($userId, ['completed_step', $step]);
+//dd($userId);
+//        echo $userId . '<br>';
+//        echo self::STEP_MAPPING[$this->formName] . '<br>';
+//        exit;
+        return $userRepo->update($userId, ['completed_step' => self::STEP_MAPPING[$this->formName]]);
     }
 
 }

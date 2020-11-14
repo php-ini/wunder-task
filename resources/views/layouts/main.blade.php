@@ -104,6 +104,8 @@
             $('#smartwizard').smartWizard("next");
         }
 
+
+
         function postData(that){
             let formName = that.data('model');
             let data = getFormData(that);
@@ -230,6 +232,15 @@
             $('#smartwizard').smartWizard("setOptions", options);
             return true;
         });
+
+        @if(isset($data->user))
+        for(i = {{ $data->user->getCompletedStep()}}; i--; i >= 0){
+            $('#smartwizard').smartWizard("stepState", [i], "disable");
+        }
+
+        $('#smartwizard').smartWizard("goToStep", {{ $data->user->getCompletedStep() }});
+        @endif
+
 
     });
 </script>

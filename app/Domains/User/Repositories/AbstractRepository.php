@@ -9,7 +9,7 @@ abstract class AbstractRepository
 {
     public function find(int $id): array
     {
-        return DB::table($this->table_name)->find($id);
+        return (array)DB::table($this->table_name)->find($id);
     }
 
     public function create(array $data): int

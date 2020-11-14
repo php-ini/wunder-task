@@ -50,7 +50,7 @@
                 Thank you for the registration..
                 <br>
                 <br>
-                Your Payment ID: <span id="paymentCode" style="font-weight: bold"></span>
+                Your Payment ID: <span id="paymentCode" style="font-weight: bold">{{ isset($data->payment) ? $data->payment->getPaymentData() : ''  }}</span>
             </div>
         </div>
     </div>

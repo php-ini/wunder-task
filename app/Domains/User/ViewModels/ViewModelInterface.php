@@ -12,9 +12,9 @@ namespace App\Domains\User\ViewModels;
 use App\Domains\User\Entities\User;
 use Illuminate\View\View;
 
-interface StepInterface
+interface ViewModelInterface
 {
 
-    public function render(User $user) : string;
+    public function build() : \stdClass;
 
 }
