@@ -3,18 +3,22 @@
  * Repository interface.
  * Interface for setting the main functions will be used during
  * the getting of the User payments information
- * @author Mahmoud Mostafa <jinkazama_m@yahoo.com>
  */
 
 namespace App\Domains\User\ViewModels;
 
 
-use App\Domains\User\Entities\User;
-use Illuminate\View\View;
-
+/**
+ * Interface ViewModelInterface
+ * @package App\Domains\User\ViewModels
+ * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
+ */
 interface ViewModelInterface
 {
 
+    /**
+     * @return \stdClass
+     */
     public function build() : \stdClass;
 
 }

@@ -4,21 +4,20 @@
 namespace App\Domains\User\Services;
 
 
-use App\Domains\API\Services\PaymentService;
-use App\Domains\User\Repositories\Repository;
-use App\Domains\User\Repositories\PaymentInfo;
-use App\Domains\User\Repositories\RepositoryInterface;
-use App\Domains\User\Repositories\User;
-use App\Domains\User\Validators\ValidatorInterface;
-use App\Domains\User\ViewModels\StepInterface;
-use App\Domains\User\Helpers\Arrays;
 use Illuminate\Http\Request;
+use App\Domains\User\Helpers\Arrays;
+use App\Domains\API\Services\PaymentService;
 use Symfony\Component\HttpFoundation\Cookie;
+use App\Domains\User\Repositories\Repository;
+use App\Domains\User\ViewModels\StepInterface;
+use App\Domains\User\Validators\ValidatorInterface;
+use App\Domains\User\Repositories\RepositoryInterface;
 
 
 /**
  * Class RegisterService
  * @package App\Domains\User\Services
+ * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 class RegisterService
 {
@@ -82,7 +81,7 @@ class RegisterService
      */
     public function prepareData($data)
     {
-        if($this->formName !== self::USER_STEP){
+        if ($this->formName !== self::USER_STEP) {
             $data = array_merge($data, ['user_id' => $this->getUserIdFromCookie()]);
         }
 
@@ -153,12 +152,12 @@ class RegisterService
     public function updateData(): int
     {
         $recordId = $this->repository->getRecord($this->getData())['id'];
-         $this->repository->update(
+        $this->repository->update(
             $recordId,
             $this->getData()
         );
 
-         return $recordId;
+        return $recordId;
     }
 
 
@@ -198,9 +197,9 @@ class RegisterService
             if ($this->isDataCreatedAlready()) {
                 $result = $this->updateData();
             } else {
-                if($this->isPaymentInfoStep()) {
+                if ($this->isPaymentInfoStep()) {
                     $this->setPaymentClasses();
-                    if($response = $this->addPaymentInfo()){
+                    if ($response = $this->addPaymentInfo()) {
                         $this->setData(
                             $this->formatterClass->prepareOutput(
                                 $response,
@@ -218,6 +217,7 @@ class RegisterService
                 }
             }
         }
+
         return $result;
     }
 
@@ -256,7 +256,6 @@ class RegisterService
     {
         return $this->paymentClass;
     }
-
 
 
 }

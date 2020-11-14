@@ -2,12 +2,21 @@
 
 
 namespace App\Domains\API\Formatters;
-use App\Domains\User\Repositories\User;
+
 use GuzzleHttp\Psr7\Response;
 
+/**
+ * Class WunderFleetFormatter
+ * @package App\Domains\API\Formatters
+ * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
+ */
 class WunderFleetFormatter implements FormatterInterface
 {
 
+    /**
+     * @param array $data
+     * @return array
+     */
     public function format(array $data): array
     {
         $new['customerId'] = $data['user_id'];
@@ -17,6 +26,11 @@ class WunderFleetFormatter implements FormatterInterface
         return $new;
     }
 
+    /**
+     * @param Response $response
+     * @param array $data
+     * @return array
+     */
     public function prepareOutput(Response $response, array $data): array
     {
         $all = $data;

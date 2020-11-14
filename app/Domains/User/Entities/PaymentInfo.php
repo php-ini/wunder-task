@@ -7,6 +7,7 @@ namespace App\Domains\User\Entities;
 /**
  * Class PaymentInfo
  * @package App\Domains\User\Entities
+ * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 class PaymentInfo implements \JsonSerializable
 {
@@ -35,6 +36,9 @@ class PaymentInfo implements \JsonSerializable
      */
     private $status;
 
+    /**
+     * @var
+     */
     private $payment_data;
 
     /**
@@ -85,27 +89,11 @@ class PaymentInfo implements \JsonSerializable
     }
 
     /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return mixed
      */
     public function getAccountOwnerName()
     {
         return $this->account_owner_name;
-    }
-
-    /**
-     * @param mixed $account_owner_name
-     */
-    public function setAccountOwnerName($account_owner_name)
-    {
-        $this->account_owner_name = $account_owner_name;
     }
 
     /**
@@ -117,27 +105,11 @@ class PaymentInfo implements \JsonSerializable
     }
 
     /**
-     * @param mixed $iban
-     */
-    public function setIban($iban)
-    {
-        $this->iban = $iban;
-    }
-
-    /**
      * @return mixed
      */
     public function getStatus()
     {
         return $this->status;
-    }
-
-    /**
-     * @param mixed $status
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
     }
 
     /**
@@ -149,14 +121,6 @@ class PaymentInfo implements \JsonSerializable
     }
 
     /**
-     * @param mixed $is_primary
-     */
-    public function setIsPrimary($is_primary)
-    {
-        $this->is_primary = $is_primary;
-    }
-
-    /**
      * @return mixed
      */
     public function getResponse()
@@ -165,27 +129,11 @@ class PaymentInfo implements \JsonSerializable
     }
 
     /**
-     * @param mixed $response
-     */
-    public function setResponse($response)
-    {
-        $this->response = $response;
-    }
-
-    /**
      * @return mixed
      */
     public function getCreatedAt()
     {
         return $this->created_at;
-    }
-
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at)
-    {
-        $this->created_at = $created_at;
     }
 
     /**

@@ -2,18 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Domains\API\Services\PaymentService;
-use App\Domains\API\Sites\WunderFleet;
-use App\Domains\User\Services\RepositoryService;
-use Faker\Provider\Payment;
-use Illuminate\Http\JsonResponse;
+use Cookie;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
 use App\Domains\User\ViewModels\Step;
+use App\Domains\API\Services\PaymentService;
 use App\Domains\User\Services\RegisterService;
 use App\Domains\User\Services\ValidatorService;
-use Cookie;
-use Illuminate\View\View;
+use App\Domains\User\Services\RepositoryService;
+
 
 class Register extends Controller
 {

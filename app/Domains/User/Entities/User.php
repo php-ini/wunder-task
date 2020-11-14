@@ -7,6 +7,7 @@ namespace App\Domains\User\Entities;
 /**
  * Class User
  * @package App\Domains\User\Entities
+ * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 class User implements \JsonSerializable
 {
@@ -91,27 +92,11 @@ class User implements \JsonSerializable
     }
 
     /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return mixed
      */
     public function getEmail()
     {
         return $this->email;
-    }
-
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
     }
 
     /**
@@ -123,27 +108,11 @@ class User implements \JsonSerializable
     }
 
     /**
-     * @param mixed $first_name
-     */
-    public function setFirstName($first_name)
-    {
-        $this->first_name = $first_name;
-    }
-
-    /**
      * @return mixed
      */
     public function getLastName()
     {
         return $this->last_name;
-    }
-
-    /**
-     * @param mixed $last_name
-     */
-    public function setLastName($last_name)
-    {
-        $this->last_name = $last_name;
     }
 
     /**
@@ -155,27 +124,11 @@ class User implements \JsonSerializable
     }
 
     /**
-     * @param mixed $telephone
-     */
-    public function setTelephone($telephone)
-    {
-        $this->telephone = $telephone;
-    }
-
-    /**
      * @return mixed
      */
     public function getCompletedStep()
     {
         return $this->completed_step;
-    }
-
-    /**
-     * @param mixed $completed_step
-     */
-    public function setCompletedStep($completed_step)
-    {
-        $this->completed_step = $completed_step;
     }
 
     /**
@@ -187,14 +140,6 @@ class User implements \JsonSerializable
     }
 
     /**
-     * @param mixed $is_active
-     */
-    public function setIsActive($is_active)
-    {
-        $this->is_active = $is_active;
-    }
-
-    /**
      * @return mixed
      */
     public function getToken()
@@ -203,27 +148,11 @@ class User implements \JsonSerializable
     }
 
     /**
-     * @param mixed $token
-     */
-    public function setToken($token)
-    {
-        $this->token = $token;
-    }
-
-    /**
      * @return mixed
      */
     public function getCreatedAt()
     {
         return $this->created_at;
-    }
-
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at)
-    {
-        $this->created_at = $created_at;
     }
 
     /**

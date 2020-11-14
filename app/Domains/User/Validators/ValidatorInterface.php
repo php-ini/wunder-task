@@ -1,9 +1,21 @@
 <?php
 namespace App\Domains\User\Validators;
 
+/**
+ * Interface ValidatorInterface
+ * @package App\Domains\User\Validators
+ * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
+ */
 interface ValidatorInterface {
 
-    public function validate( array $data): bool;
+    /**
+     * @param array $data
+     * @return bool
+     */
+    public function validate(array $data): bool;
 
+    /**
+     * @return array
+     */
     public function getMessages(): array;
 }

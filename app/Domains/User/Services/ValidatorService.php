@@ -7,9 +7,17 @@ use App\Domains\User\Validators\UserValidator;
 use App\Domains\User\Validators\AddressValidator;
 use App\Domains\User\Validators\PaymentInfoValidator;
 
+/**
+ * Class ValidatorService
+ * @package App\Domains\User\Services
+ * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
+ */
 class ValidatorService
 {
 
+    /**
+     * @var string
+     */
     private $formName;
 
     /**
@@ -20,6 +28,9 @@ class ValidatorService
         $this->formName = $formName;
     }
 
+    /**
+     * @return AddressValidator|PaymentInfoValidator|UserValidator
+     */
     public function getValidator()
     {
         switch ($this->formName) {

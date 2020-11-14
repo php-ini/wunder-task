@@ -5,19 +5,35 @@ namespace App\Domains\User\ViewModels;
 
 
 use App\Domains\User\Entities\User as UserEntity;
-use App\Domains\User\Entities\Address as AddressEntity;
-use App\Domains\User\Entities\PaymentInfo as PaymentEntity;
 use App\Domains\User\Repositories\User as UserRepo;
+use App\Domains\User\Entities\Address as AddressEntity;
 use App\Domains\User\Repositories\Address as AddressRepo;
+use App\Domains\User\Entities\PaymentInfo as PaymentEntity;
 use App\Domains\User\Repositories\PaymentInfo as PaymentRepo;
-use Illuminate\View\View;
 
+/**
+ * Class Step
+ * @package App\Domains\User\ViewModels
+ * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
+ */
 final class Step implements ViewModelInterface
 {
 
+    /**
+     * @var
+     */
     private $userId;
+    /**
+     * @var UserRepo
+     */
     private $userRepo;
+    /**
+     * @var AddressRepo
+     */
     private $addressRepo;
+    /**
+     * @var PaymentRepo
+     */
     private $paymentRepo;
 
     /**
@@ -36,12 +52,18 @@ final class Step implements ViewModelInterface
     }
 
 
+    /**
+     * @return \stdClass
+     */
     public function build(): \stdClass
     {
         $data = $this->buildStepData();
         return $data;
     }
 
+    /**
+     * @return \stdClass
+     */
     private function buildStepData(): \stdClass
     {
         $all = new \stdClass();
@@ -122,6 +144,9 @@ final class Step implements ViewModelInterface
 
     }
 
+    /**
+     * @return bool
+     */
     public function hasData(): bool
     {
         return $this->userRepo->exists('id', $this->userId);

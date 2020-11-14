@@ -7,6 +7,7 @@ namespace App\Domains\User\Entities;
 /**
  * Class Repository
  * @package App\Domains\User\Entities
+ * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 class Address implements \JsonSerializable
 {
@@ -56,6 +57,11 @@ class Address implements \JsonSerializable
     private $created_at;
 
     /**
+     * @var
+     */
+    private $updated_at;
+
+    /**
      * Repository constructor.
      * @param int $id
      * @param int $user_id
@@ -96,27 +102,11 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return mixed
      */
     public function getUserId()
     {
         return $this->user_id;
-    }
-
-    /**
-     * @param mixed $user_id
-     */
-    public function setUserId($user_id)
-    {
-        $this->user_id = $user_id;
     }
 
     /**
@@ -128,27 +118,11 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @param mixed $street
-     */
-    public function setStreet($street)
-    {
-        $this->street = $street;
-    }
-
-    /**
      * @return mixed
      */
     public function getHouseNumber()
     {
         return $this->house_number;
-    }
-
-    /**
-     * @param mixed $house_number
-     */
-    public function setHouseNumber($house_number)
-    {
-        $this->house_number = $house_number;
     }
 
     /**
@@ -160,27 +134,11 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @param mixed $zip_code
-     */
-    public function setZipCode($zip_code)
-    {
-        $this->zip_code = $zip_code;
-    }
-
-    /**
      * @return mixed
      */
     public function getCity()
     {
         return $this->city;
-    }
-
-    /**
-     * @param mixed $city
-     */
-    public function setCity($city)
-    {
-        $this->city = $city;
     }
 
     /**
@@ -192,27 +150,11 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @param mixed $country
-     */
-    public function setCountry($country)
-    {
-        $this->country = $country;
-    }
-
-    /**
      * @return mixed
      */
     public function getIsPrimary()
     {
         return $this->is_primary;
-    }
-
-    /**
-     * @param mixed $is_primary
-     */
-    public function setIsPrimary($is_primary)
-    {
-        $this->is_primary = $is_primary;
     }
 
     /**
@@ -224,33 +166,12 @@ class Address implements \JsonSerializable
     }
 
     /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at)
-    {
-        $this->created_at = $created_at;
-    }
-
-    /**
      * @return mixed
      */
     public function getUpdatedAt()
     {
         return $this->updated_at;
     }
-
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at)
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @var
-     */
-    private $updated_at;
 
     /**
      * @inheritDoc
