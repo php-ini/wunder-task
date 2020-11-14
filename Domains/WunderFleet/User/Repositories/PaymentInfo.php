@@ -6,7 +6,7 @@ namespace Domains\WunderFleet\User\Repositories;
 
 /**
  * Class PaymentInfo
- * @package App\WunderFleet\User\Repositories
+ * @package Domains\WunderFleet\User\Repositories
  * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 class PaymentInfo extends AbstractRepository implements RepositoryInterface

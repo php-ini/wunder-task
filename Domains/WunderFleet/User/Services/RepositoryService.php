@@ -10,7 +10,7 @@ use Domains\WunderFleet\User\Repositories\PaymentInfo;
 
 /**
  * Class RepositoryService
- * @package App\WunderFleet\User\Services
+ * @package Domains\WunderFleet\User\Services
  * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 class RepositoryService

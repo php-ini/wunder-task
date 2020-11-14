@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Validator;
 
 /**
  * Class PaymentInfoValidator
- * @package App\WunderFleet\User\Validators
+ * @package Domains\WunderFleet\User\Validators
  * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 class PaymentInfoValidator implements ValidatorInterface

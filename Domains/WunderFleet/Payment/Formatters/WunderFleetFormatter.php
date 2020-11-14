@@ -1,13 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Domains\WunderFleet\API\Formatters;
-
-use GuzzleHttp\Psr7\Response;
+namespace Domains\WunderFleet\Payment\Formatters;
 
 /**
  * Class WunderFleetFormatter
- * @package App\WunderFleet\API\Formatters
+ * @package Domains\WunderFleet\Payment\Formatters
  * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 class WunderFleetFormatter implements FormatterInterface

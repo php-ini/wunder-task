@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Validator;
 
 /**
  * Class AddressValidator
- * @package App\WunderFleet\User\Validators
+ * @package Domains\WunderFleet\User\Validators
  * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 class AddressValidator implements ValidatorInterface

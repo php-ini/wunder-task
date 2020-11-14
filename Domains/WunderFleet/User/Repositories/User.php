@@ -7,7 +7,7 @@ use DB;
 
 /**
  * Class User
- * @package App\WunderFleet\User\Repositories
+ * @package Domains\WunderFleet\User\Repositories
  * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 class User extends AbstractRepository implements RepositoryInterface

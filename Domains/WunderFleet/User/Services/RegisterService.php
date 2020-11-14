@@ -15,7 +15,7 @@ use Domains\WunderFleet\User\Repositories\RepositoryInterface;
 
 /**
  * Class RegisterService
- * @package App\WunderFleet\User\Services
+ * @package Domains\WunderFleet\User\Services
  * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 class RegisterService

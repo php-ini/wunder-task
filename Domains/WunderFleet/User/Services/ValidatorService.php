@@ -9,7 +9,7 @@ use Domains\WunderFleet\User\Validators\PaymentInfoValidator;
 
 /**
  * Class ValidatorService
- * @package App\WunderFleet\User\Services
+ * @package Domains\WunderFleet\User\Services
  * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 class ValidatorService

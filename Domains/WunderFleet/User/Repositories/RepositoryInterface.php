@@ -11,7 +11,7 @@ namespace Domains\WunderFleet\User\Repositories;
 
 /**
  * Interface RepositoryInterface
- * @package App\WunderFleet\User\Repositories
+ * @package Domains\WunderFleet\User\Repositories
  * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 interface RepositoryInterface

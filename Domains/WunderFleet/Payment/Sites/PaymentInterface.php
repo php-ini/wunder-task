@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Domains\WunderFleet\API\Sites;
+namespace Domains\WunderFleet\Payment\Sites;
 
 /**
  * Interface CrawlerInterface
- * @package App\WunderFleet\API\Sites
+ * @package Domains\WunderFleet\Payment\Sites
  * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 interface PaymentInterface{

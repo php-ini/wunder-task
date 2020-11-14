@@ -10,7 +10,7 @@ namespace Domains\WunderFleet\User\ViewModels;
 
 /**
  * Interface ViewModelInterface
- * @package App\WunderFleet\User\ViewModels
+ * @package Domains\WunderFleet\User\ViewModels
  * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
 interface ViewModelInterface
