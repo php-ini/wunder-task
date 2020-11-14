@@ -17,5 +17,8 @@
 <b>Notes:</b>
 <p>The provided endpoint for payment is returning 502 Bad Gateway, so I created another endpoint locally for the purpose of simulation the request/response.</p>
 <p>The simulation endpoint can be disabled by switching the constant in <code>Domains/WunderFleet/Payment/Sites/WunderFleet.php</code></p>
-<p>The MySQL database schema can be found in <code>wunder.sql</code>
-</p>
+<p>The MySQL database schema can be found in <code>wunder.sql</code></p>
+
+<pre><b>Copyrights:</b>
+Mahmoud Mostafa</pre>
+
