@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /**
  * Repository interface.
  * Interface for setting the main functions will be used during
@@ -6,7 +7,6 @@
  */
 
 namespace App\Domains\User\ViewModels;
-
 
 /**
  * Interface ViewModelInterface

@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 
 namespace App\Domains\User\Entities;
 
@@ -66,7 +66,7 @@ class Address implements \JsonSerializable
      * @param int $id
      * @param int $user_id
      * @param string $street
-     * @param int $house_number
+     * @param string $house_number
      * @param string $zip_code
      * @param string $city
      * @param string $country
@@ -76,7 +76,7 @@ class Address implements \JsonSerializable
         int $id,
         int $user_id,
         string $street,
-        int $house_number,
+        string $house_number,
         string $zip_code,
         string $city,
         string $country,

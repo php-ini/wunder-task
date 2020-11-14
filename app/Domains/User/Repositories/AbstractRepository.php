@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 
 namespace App\Domains\User\Repositories;
 
@@ -35,7 +35,7 @@ abstract class AbstractRepository
      * @param array $data
      * @return bool
      */
-    public function update(int $id, array $data): bool
+    public function update(int $id, array $data): int
     {
         return DB::table($this->table_name)
             ->where('id', $id)

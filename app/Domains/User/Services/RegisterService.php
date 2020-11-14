@@ -1,8 +1,7 @@
 <?php
-
+declare(strict_types=1);
 
 namespace App\Domains\User\Services;
-
 
 use Illuminate\Http\Request;
 use App\Domains\User\Helpers\Arrays;
@@ -207,12 +206,12 @@ class RegisterService
                             )
                         );
                         $result = $this->createData();
-                        $userId = !empty($this->getUserIdFromCookie()) ? $this->getUserIdFromCookie() : $result;
+                        $userId = !empty($this->getUserIdFromCookie()) ? (int)$this->getUserIdFromCookie() : (int)$result;
                         $repositoryService->updateUserSteps($userId);
                     }
                 } else {
                     $result = $this->createData();
-                    $userId = !empty($this->getUserIdFromCookie()) ? $this->getUserIdFromCookie() : $result;
+                    $userId = !empty($this->getUserIdFromCookie()) ? (int)$this->getUserIdFromCookie() : (int)$result;
                     $repositoryService->updateUserSteps($userId);
                 }
             }

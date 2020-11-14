@@ -1,8 +1,7 @@
 <?php
-
+declare(strict_types=1);
 
 namespace App\Domains\User\Validators;
-
 
 use Illuminate\Support\Facades\Validator;
 

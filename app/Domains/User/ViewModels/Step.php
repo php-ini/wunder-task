@@ -1,8 +1,7 @@
 <?php
-
+declare(strict_types=1);
 
 namespace App\Domains\User\ViewModels;
-
 
 use App\Domains\User\Entities\User as UserEntity;
 use App\Domains\User\Repositories\User as UserRepo;
@@ -38,12 +37,9 @@ final class Step implements ViewModelInterface
 
     /**
      * Step constructor.
-     * @param $userId
-     * @param $userRepo
-     * @param $addressRepo
-     * @param $paymentRepo
+     * @param int $userId
      */
-    public function __construct($userId)
+    public function __construct(int $userId)
     {
         $this->userId = $userId;
         $this->userRepo = new UserRepo();
@@ -57,8 +53,7 @@ final class Step implements ViewModelInterface
      */
     public function build(): \stdClass
     {
-        $data = $this->buildStepData();
-        return $data;
+        return $this->buildStepData();
     }
 
     /**
@@ -80,6 +75,7 @@ final class Step implements ViewModelInterface
     private function getUserStepData(): ?UserEntity
     {
         $modelData = $this->userRepo->find($this->userId);
+
         if(empty($modelData)){
             return null;
         }
@@ -103,6 +99,7 @@ final class Step implements ViewModelInterface
     private function getAddressStepData(): ?AddressEntity
     {
         $modelData = $this->addressRepo->where('user_id', $this->userId);
+
         if(empty($modelData)){
             return null;
         }
@@ -126,6 +123,7 @@ final class Step implements ViewModelInterface
     private function getPaymentStepData(): ?PaymentEntity
     {
         $modelData = $this->paymentRepo->where('user_id', $this->userId);
+
         if(empty($modelData)){
             return null;
         }
@@ -141,7 +139,6 @@ final class Step implements ViewModelInterface
             $modelData['response'],
             $modelData['created_at']
         );
-
     }
 
     /**

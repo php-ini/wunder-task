@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 
 namespace App\Domains\API\Services;
 
@@ -40,9 +40,10 @@ class PaymentService
     }
 
     /**
+     * @param int $userId
      * @return string|null
      */
-    public function getPaymentCode($userId): ?string
+    public function getPaymentCode(int $userId): ?string
     {
         $paymentRepo = new PaymentInfo();
         return $paymentRepo->getPaymentCode($userId);

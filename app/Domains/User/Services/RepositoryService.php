@@ -1,8 +1,7 @@
 <?php
-
+declare(strict_types=1);
 
 namespace App\Domains\User\Services;
-
 
 use App\Domains\User\Repositories\User;
 use App\Domains\User\Repositories\Address;
@@ -50,10 +49,10 @@ class RepositoryService
     }
 
     /**
-     * @param $userId
+     * @param int $userId
      * @return bool
      */
-    public function updateUserSteps($userId)
+    public function updateUserSteps(int $userId)
     {
         $userRepo = new User();
 

@@ -21,7 +21,7 @@ class Register extends Controller
     public function index(Request $request)
     {
         if ($userId = Cookie::get(RegisterService::COOKIE_NAME)) {
-            $step = new Step($userId);
+            $step = new Step((int)$userId);
 
             if ($step->hasData()) {
                 return view('index', ['data' => $step->build()]);
@@ -60,7 +60,7 @@ class Register extends Controller
 
             if (!empty($registerService->getPaymentClass())) {
 
-                return new JsonResponse(['status' => 'success', 'paymentCode' => $paymentService->getPaymentCode($registerService->getUserIdFromCookie())], 200);
+                return new JsonResponse(['status' => 'success', 'paymentCode' => $paymentService->getPaymentCode((int)$registerService->getUserIdFromCookie())], 200);
             }
 
             return new JsonResponse(['status' => 'success', 'errors' => $registerService->getValidator()->getMessages()], 200);

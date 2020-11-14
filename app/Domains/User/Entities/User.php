@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 
 namespace App\Domains\User\Entities;
 
@@ -69,7 +69,7 @@ class User implements \JsonSerializable
         string $last_name,
         string $telephone,
         int $completed_step,
-        bool $is_active,
+        int $is_active,
         string $created_at
     )
     {
