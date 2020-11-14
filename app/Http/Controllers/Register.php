@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use App\Domains\User\ViewModels\Step;
-use App\Domains\API\Services\PaymentService;
-use App\Domains\User\Services\RegisterService;
-use App\Domains\User\Services\ValidatorService;
-use App\Domains\User\Services\RepositoryService;
+use Domains\WunderFleet\User\ViewModels\Step;
+use Domains\WunderFleet\API\Services\PaymentService;
+use Domains\WunderFleet\User\Services\RegisterService;
+use Domains\WunderFleet\User\Services\ValidatorService;
+use Domains\WunderFleet\User\Services\RepositoryService;
 
 
 class Register extends Controller
