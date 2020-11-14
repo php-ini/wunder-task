@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
+    <h1>WunderFleet Task</h1>
+    <br>
     <!-- SmartWizard html -->
     <div id="smartwizard">
 

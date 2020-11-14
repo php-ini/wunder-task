@@ -6,9 +6,9 @@ use Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Domains\WunderFleet\User\ViewModels\Step;
-use Domains\WunderFleet\API\Services\PaymentService;
 use Domains\WunderFleet\User\Services\RegisterService;
-use Domains\WunderFleet\User\Services\ValidatorService;
+use Domains\WunderFleet\User\Factories\ValidatorFactory;
+use Domains\WunderFleet\Payment\Services\PaymentService;
 use Domains\WunderFleet\User\Services\RepositoryService;
 
 
@@ -42,9 +42,9 @@ class Register extends Controller
             $data = $request->input();
             $formName = $data['form'];
             $repositoryService = new RepositoryService($formName);
-            $validatorService = new ValidatorService($formName);
+            $validatorFactory = new ValidatorFactory($formName);
             $registerService = new RegisterService(
-                $validatorService->getValidator(),
+                $validatorFactory->getValidator(),
                 $repositoryService->getRepository(),
                 $formName,
                 $request

@@ -5,7 +5,7 @@ namespace Domains\WunderFleet\User\Services;
 
 use Illuminate\Http\Request;
 use Domains\WunderFleet\User\Helpers\Arrays;
-use Domains\WunderFleet\API\Services\PaymentService;
+use Domains\WunderFleet\Payment\Services\PaymentService;
 use Symfony\Component\HttpFoundation\Cookie;
 use Domains\WunderFleet\User\Repositories\Repository;
 use Domains\WunderFleet\User\ViewModels\StepInterface;

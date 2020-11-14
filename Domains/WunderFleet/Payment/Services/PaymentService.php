@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Domains\WunderFleet\API\Services;
+namespace Domains\WunderFleet\Payment\Services;
 
 
 use Domains\WunderFleet\Payment\Formatters\FormatterInterface;
@@ -19,14 +19,14 @@ class PaymentService
     /**
      * @var string
      */
-    protected $paymentApiSite = WunderFleet::class;
+    protected $paymentProvider = WunderFleet::class;
 
     /**
      * @return PaymentInterface
      */
     public function getPaymentSiteClass(): PaymentInterface
     {
-        $class = $this->paymentApiSite;
+        $class = $this->paymentProvider;
         return new $class();
     }
 
@@ -35,7 +35,7 @@ class PaymentService
      */
     public function getFormatterClass(): FormatterInterface
     {
-        $class = str_replace('Sites', 'Formatters',$this->paymentApiSite . 'Formatter');
+        $class = str_replace('Sites', 'Formatters',$this->paymentProvider . 'Formatter');
         return new $class();
     }
 

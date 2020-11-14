@@ -1,18 +1,18 @@
 <?php
 declare(strict_types=1);
 
-namespace Domains\WunderFleet\User\Services;
+namespace Domains\WunderFleet\User\Factories;
 
 use Domains\WunderFleet\User\Validators\UserValidator;
 use Domains\WunderFleet\User\Validators\AddressValidator;
 use Domains\WunderFleet\User\Validators\PaymentInfoValidator;
 
 /**
- * Class ValidatorService
+ * Class ValidatorFactory
  * @package Domains\WunderFleet\User\Services
  * @author Mahmoud Abdelsattar <jinkazama_m@yahoo.com>
  */
-class ValidatorService
+class ValidatorFactory
 {
 
     /**
