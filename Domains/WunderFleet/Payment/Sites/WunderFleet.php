@@ -37,7 +37,7 @@ class WunderFleet implements PaymentInterface
      * @return Response
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function sendRequest(array $data): Response
+    public function sendRequest(array $data): ?Response
     {
         try {
 
@@ -51,12 +51,12 @@ class WunderFleet implements PaymentInterface
         } catch (GuzzleHttp\Exception\ServerException $e) {
 
             Log::error($e->getMessage());
-            return false;
+            return null;
 
         } catch (\Exception $e) {
 
             Log::error($e->getMessage());
-            return false;
+            return null;
 
         }
 

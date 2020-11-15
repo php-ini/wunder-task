@@ -68,8 +68,11 @@ class Register extends Controller
              * Response logic for the payment step
              */
             if (!empty($registerService->getPaymentClass())) {
-
-                return new JsonResponse(['status' => 'success', 'paymentCode' => $paymentService->getPaymentCode((int)$registerService->getUserIdFromCookie())], 200);
+                $paymentCode = $paymentService->getPaymentCode((int)$registerService->getUserIdFromCookie());
+                if(!$paymentCode){
+                    return new JsonResponse(['status' => 'failed', 'errors' => 'Bad Gateway - Couldn\'t add the payment'], 502);
+                }
+                return new JsonResponse(['status' => 'success', 'paymentCode' => $paymentCode], 200);
             }
 
             return new JsonResponse(['status' => 'success', 'errors' => $registerService->getValidator()->getMessages()], 200);

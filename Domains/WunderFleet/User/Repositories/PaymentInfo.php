@@ -41,6 +41,6 @@ class PaymentInfo extends AbstractRepository implements RepositoryInterface
     public function getPaymentCode(int $user_id): ?string
     {
         $record = $this->where('user_id', $user_id);
-        return $record['payment_data'];
+        return $record['payment_data'] ?? null;
     }
 }
