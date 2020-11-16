@@ -15,6 +15,7 @@
 <b>Which things could be done better?</b>
 <p>- Decouple the registration steps to have one handler for everystep, in this way I can have more flexibility and can control the changes might be required in the future.</p>
 <p>- Select the payment provider (site) with the dependency injection, now it is hard-coded in a constant</p>
+<p>Use unit testing.</p>
 <b>Installation:</b>
 <p>- Install locally the virtual host for your domain (mine was wunder.test).</p>
 <p>- Clone the repository to your local (git clone ..).</p>
